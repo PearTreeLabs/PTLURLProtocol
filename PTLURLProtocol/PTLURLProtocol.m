@@ -24,7 +24,6 @@ NSString * const kPTLURLProtocolErrorOriginalRequest = @"com.peartreelabs.PTLURL
 }
 
 - (void)startLoading {
-    NSLog(@"Started Loading: %@", self.request);
     NSURLResponse *response = [[self class] responseForRequest:self.request];
     if (response == nil) {
         NSError *error = [NSError errorWithDomain:PTLURLProtocolErrorDomain
@@ -42,10 +41,6 @@ NSString * const kPTLURLProtocolErrorOriginalRequest = @"com.peartreelabs.PTLURL
     }
 
     [self.client URLProtocolDidFinishLoading:self];
-}
-
-- (void)stopLoading {
-    NSLog(@"Stopped Loading: %@", self.request);
 }
 
 + (NSURLResponse *)responseForRequest:(NSURLRequest *)request {

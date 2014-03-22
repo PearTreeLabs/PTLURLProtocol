@@ -43,6 +43,10 @@ NSString * const kPTLURLProtocolErrorOriginalRequest = @"com.peartreelabs.PTLURL
     [self.client URLProtocolDidFinishLoading:self];
 }
 
+- (void)stopLoading {
+    //Implementation is required by abstract parent class
+}
+
 + (NSURLResponse *)responseForRequest:(NSURLRequest *)request {
     return nil;
 }
